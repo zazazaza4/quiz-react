@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "types": ["cross-spawn"],
+    "typeRoots": ["node_modules/@types", "custom/types"],
+    "outDir": "./build/",
+    "noImplicitAny": true,
+    "module": "ESNext",
+    "target": "es5",
+    "jsx": "react-jsx",
+    "allowJs": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "strict": true,
+    "isolatedModules": true,
+    "paths": {
+      "@/*": ["./src/*"],
+    },
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS",
+    },
+  },
+  "include": ["./src", "./config/jest/setupTests.ts"],
+}
