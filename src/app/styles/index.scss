@@ -1,0 +1,45 @@
+@import "reset";
+@import "variables/global";
+@import url("https://fonts.googleapis.com/css2?family=Niconne&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Albert+Sans:wght@500;600;800&display=swap");
+
+body {
+  font: var(--font-m);
+  color: var(--white-color);
+  background-color: var(--bg-color);
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 900px;
+  min-height: 500px;
+  margin: 0 auto;
+
+  @media (min-width: 600px) {
+    width: 90%;
+  }
+
+  @media (min-width: 900px) {
+    width: 900px;
+  }
+}
+
+*::-webkit-scrollbar {
+  width: 12px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--card-bg);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--inverted-bg-color);
+  border-radius: 20px;
+  bottom: 2px solid var(--primary-color);
+}
