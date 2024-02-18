@@ -1,0 +1,17 @@
+{
+    "privacyAndTerms": {
+        "agree": "Al continuar, acepto la",
+        "privacyPolicy": "Política de privacidad",
+        "and": "y",
+        "termsOfUse": "Términos de uso"
+    },
+    "placeholders": {
+        "email": "Tu correo electrónico"
+    },
+    "errors": {
+        "invalidEmail": "Formato de correo electrónico inválido"
+    },
+    "buttons": {
+        "next": "Siguiente"
+    }
+}

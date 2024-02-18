@@ -1,0 +1,9 @@
+{
+    "error": {
+        "message": "Se ha producido un error.",
+        "button": "Reintentar"
+    },
+    "buttons": {
+        "next": "Siguiente"
+    }
+}
