@@ -11,11 +11,11 @@ export const userSlice = createSlice({
   initialState,
   reducers: {
     setData: (state, action: PayloadAction<User>) => {
-      state.date = action.payload;
-      localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(state.date));
+      state.data = action.payload;
+      localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(state.data));
     },
     reset: (state) => {
-      state.date = undefined;
+      state.data = undefined;
       localStorage.removeItem(USER_LOCALSTORAGE_KEY);
     },
   },

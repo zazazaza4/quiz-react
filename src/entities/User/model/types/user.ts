@@ -3,5 +3,5 @@ export interface User {
 }
 
 export interface UserSchema {
-  date?: User;
+  data?: User;
 }
