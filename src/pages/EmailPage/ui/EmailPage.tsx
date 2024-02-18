@@ -36,7 +36,10 @@ const EmailPage: FC<EmailPageProps> = memo((props: EmailPageProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <Page className={classNames(cls.EmailPage, {}, [className])}>
+      <Page
+        data-testid="EmailPage"
+        className={classNames(cls.EmailPage, {}, [className])}
+      >
         <VStack max className="container" align="center">
           <VStack gap="12" max align="center">
             <Text weight="extraBold" title="Email" />
