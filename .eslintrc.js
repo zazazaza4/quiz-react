@@ -36,8 +36,10 @@ module.exports = {
     'max-len': ['error', { code: 120 }],
     '@typescript-eslint/no-unused-vars': 'off',
     'react/jsx-max-props-per-line': ['error', { maximum: 4}],
+    "react/destructuring-assignment": 'off',
+    "react/jsx-props-no-spreading": 'off',
     'i18next/no-literal-string': [
-      'error',
+      'off',
       {
         markupOnly: true,
         ignoreAttribute: [
@@ -89,7 +91,6 @@ module.exports = {
       2,
       { extensions: ['.js', '.jsx', '.tsx'] },
     ],
-    'react/jsx-props-no-spreading': 'warn',
     'react/react-in-jsx-scope': 'off',
     'react/require-default-props': 'off',
     'react/jsx-uses-react': 'off',
