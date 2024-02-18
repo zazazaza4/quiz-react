@@ -5,6 +5,7 @@ import {
   ReducersMapObject,
 } from '@reduxjs/toolkit';
 
+import { answersReducer } from '@/entities/Answer';
 import { quizReducer } from '@/entities/Quiz';
 
 import { $api } from '@/shared/api/api';
@@ -19,6 +20,7 @@ export const createReduxStore = (
   const rootReducers: ReducersMapObject<StateSchema> = {
     ...asyncReducers,
     quiz: quizReducer,
+    answers: answersReducer,
   };
 
   const reducerManager = createReducerManager(rootReducers);

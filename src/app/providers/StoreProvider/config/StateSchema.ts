@@ -7,6 +7,7 @@ import {
 } from '@reduxjs/toolkit';
 import { ToolkitStore } from '@reduxjs/toolkit/dist/configureStore';
 
+import { AnswersSchema } from '@/entities/Answer';
 import { QuizSchema } from '@/entities/Quiz';
 import { UserSchema } from '@/entities/User';
 
@@ -14,6 +15,7 @@ import { createReduxStore } from './store';
 
 export interface StateSchema {
   quiz: QuizSchema;
+  answers: AnswersSchema;
 
   // async
   user?: UserSchema;
