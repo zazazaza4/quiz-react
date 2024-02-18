@@ -29,7 +29,10 @@ const ResultPage: FC<ResultPageProps> = memo((props: ResultPageProps) => {
   };
 
   return (
-    <Page className={classNames(cls.ResultPage, {}, [className])}>
+    <Page
+      data-testid="ResultPage"
+      className={classNames(cls.ResultPage, {}, [className])}
+    >
       <VStack align="center" className="container">
         <Text size="size_l" font="secondary" title="Thank you" />
         <Text text="for supporting us and passing quiz" />

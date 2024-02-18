@@ -1,6 +1,7 @@
+import { Navigate } from 'react-router-dom';
+
 import { EmailPage } from '@/pages/EmailPage';
 import { LoadingPage } from '@/pages/LoadingPage';
-import { NotFoundPage } from '@/pages/NotFoundPage';
 import { QuizPage } from '@/pages/QuizPage';
 import { ResultPage } from '@/pages/ResultPage';
 
@@ -34,6 +35,6 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
   // last
   [AppRoutes.NOT_FOUND]: {
     path: '*',
-    element: <NotFoundPage />,
+    element: <Navigate replace to={getRouteQuiz('1')} />,
   },
 };

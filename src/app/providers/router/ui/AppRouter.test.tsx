@@ -1,6 +1,6 @@
 import { screen, waitFor } from '@testing-library/react';
 
-import { getRouteEmail } from '@/shared/const/router';
+import { getRouteEmail, getRouteResult } from '@/shared/const/router';
 import { componentRender } from '@/shared/lib/tests/componentRender/componentRender';
 
 import { AppRouter } from './AppRouter';
@@ -17,13 +17,13 @@ describe('app/router/AppRouter', () => {
     });
   });
 
-  test('not found', async () => {
+  test('Result Page', async () => {
     componentRender(<AppRouter />, {
-      route: '/afsfsfsfdsfsdfsfdsd',
+      route: getRouteResult(),
     });
 
-    await waitFor(() => {
-      const page = screen.getByTestId('NotFoundPage');
+    await waitFor(async () => {
+      const page = await screen.findByTestId('ResultPage');
       expect(page).toBeInTheDocument();
     });
   });
