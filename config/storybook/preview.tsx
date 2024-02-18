@@ -4,7 +4,6 @@ import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorat
 import { StyleDecorator } from '../../src/shared/config/storybook/StyleDecorator/StyleDecorator';
 import { SuspenseDecorator } from '../../src/shared/config/storybook/SuspenseDecorator/SuspenseDecorator';
 import { TranslationDecorator } from '../../src/shared/config/storybook/TranslationDecorator/TranslationDecorator';
-import { Theme } from '../../src/shared/const/theme';
 
 const preview: Preview = {
   decorators: [
@@ -22,14 +21,6 @@ const preview: Preview = {
       },
     },
     layout: 'fullscreen',
-    themes: {
-      default: 'Light',
-      list: [
-        { name: 'Light', class: Theme.LIGHT, color: '#fff' },
-        { name: 'Dark', class: Theme.DARK, color: '#000' },
-        { name: 'Orange', class: Theme.ORANGE, color: '#ffb005' },
-      ],
-    },
   },
 };
 
