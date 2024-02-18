@@ -1,0 +1,108 @@
+{
+  "quiz": [
+    {
+      "id": "1",
+      "question": "What is your preferred language?",
+      "description": "Choose language",
+      "options": [
+        {
+          "value": "English"
+        },
+        {
+          "value": "French"
+        },
+        {
+          "value": "German"
+        },
+        {
+          "value": "Spanish"
+        }
+      ],
+      "type": "single-select"
+    },
+    {
+      "id": "2",
+      "question": "What gender do you identify with?",
+      "description": "Please share how do you identify yourself",
+      "options": [
+        {
+          "value": "Female"
+        },
+        {
+          "value": "Male"
+        },
+        {
+          "value": "Other"
+        }
+      ],
+      "type": "single-select"
+    },
+    {
+      "id": "3",
+      "question": "What is your age?",
+      "options": [
+        {
+          "value": "18-25 years"
+        },
+        {
+          "value": "30-39 years"
+        },
+        {
+          "value": "40-49 years"
+        },
+        {
+          "value": "50+"
+        }
+      ],
+      "type": "single-select"
+    },
+    {
+      "id": "4",
+      "question": "What do you hate the most in a book?",
+      "options": [
+        {
+          "value": "Lack of logic"
+        },
+        {
+          "value": "A slow speed"
+        },
+        {
+          "value": "Lack of humor"
+        },
+        {
+          "value": "Way too generic ending"
+        }
+      ],
+      "type": "multiple-select"
+    },
+    {
+      "id": "5",
+      "question": "What are your favorite topics?",
+      "description": "Choose up to 3 topics you like",
+      "options": [
+        {
+          "value": "Werewolf"
+        },
+        {
+          "value": "Romance"
+        },
+        {
+          "value": "Action"
+        },
+        {
+          "value": "Young Adult"
+        },
+        {
+          "value": "Royal Obsession"
+        },
+        {
+          "value": "Bad Boy"
+        },
+        {
+          "value": "Billionaire"
+        }
+      ],
+      "type": "bubble"
+    }
+  ]
+}
