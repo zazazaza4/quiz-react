@@ -1,0 +1,30 @@
+.InputWrapper {
+  padding: 21px 20px;
+  width: 100%;
+  background: var(--input-bg);
+  border: 1px solid var(--input-bg);
+  border-radius: 16px;
+}
+
+.input {
+  font: var(--font-m);
+  border: none;
+  outline: none;
+  background-color: inherit;
+  color: var(--input-text-color);
+  width: 100%;
+
+  &::placeholder {
+    color: var(--gray-color);
+    opacity: 0.5;
+  }
+}
+
+.focus {
+  transition: border 0.2s ease-in;
+  border: 1px solid var(--primary-color);
+}
+
+.error {
+  border: 1px solid var(--error-color);
+}
