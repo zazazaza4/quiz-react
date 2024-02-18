@@ -1,4 +1,4 @@
-import { FC, memo } from 'react';
+import { FC, memo, ReactNode } from 'react';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
 
@@ -50,8 +50,8 @@ const mapSizeToHeaderTag: Record<TextSize, HeaderTagType> = {
 
 interface TextProps {
   className?: string;
-  title?: string;
-  text?: string;
+  title?: string | ReactNode;
+  text?: string | ReactNode;
   theme?: TextTheme;
   align?: TextAlign;
   size?: TextSize;
