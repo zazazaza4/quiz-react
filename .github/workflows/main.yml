@@ -36,13 +36,16 @@ jobs:
         run: npm run storybook:build
         if: always()
       - name: screenshot testing
-        run: mv .loki reports/
+        run: npm run test:ui:ci
         if: always()
-      - name: Move loki
-        run: npm run test:ui:report
+      - name: unit testing
         if: always()
+        run: npm run test:unit
       - name: Generate HTML report
         run: npm run test:ui:report
+        if: always()
+      - name: move loki
+        run: mv .loki reports/
         if: always()
       - name: Setup Pages
         uses: actions/configure-pages@v2
