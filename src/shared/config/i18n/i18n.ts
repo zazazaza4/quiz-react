@@ -11,6 +11,7 @@ i18n
     fallbackLng: 'en',
     debug: __IS_DEV__,
     cleanCode: true,
+    lowerCaseLng: true,
     nonExplicitSupportedLngs: true,
     backend: {
       loadPath: 'locales/{{lng}}/{{ns}}.json',
