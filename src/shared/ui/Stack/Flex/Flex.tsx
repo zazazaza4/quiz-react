@@ -6,14 +6,10 @@ import { TestProps } from '@/shared/types/tests';
 import cls from './Flex.module.scss';
 
 export type FlexJustify = 'start' | 'center' | 'end' | 'between';
-
 export type FlexAlign = 'start' | 'center' | 'end';
-
 export type FlexDirection = 'row' | 'column';
-
 export type FlexWrap = 'wrap' | 'nowrap';
-
-export type FlexGap = '4' | '8' | '12' | '16' | '20';
+export type FlexGap = '4' | '8' | '12' | '16' | '20' | '40';
 
 const justifyClasses: Record<FlexJustify, string> = {
   start: cls.justifyStart,
@@ -44,6 +40,7 @@ const gapClasses: Record<FlexGap, string> = {
   12: cls.gap12,
   16: cls.gap16,
   20: cls.gap20,
+  40: cls.gap40,
 };
 
 type DivProps = DetailedHTMLProps<
