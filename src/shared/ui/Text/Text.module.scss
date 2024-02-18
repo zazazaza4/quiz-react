@@ -1,0 +1,111 @@
+.white {
+  .title,
+  .text {
+    color: var(--white-color);
+  }
+}
+
+.primary {
+  .title,
+  .text {
+    color: var(--primary-color);
+  }
+}
+
+.gray {
+  .title,
+  .text {
+    color: var(--gray-color);
+  }
+}
+
+.error {
+  .title,
+  .text {
+    color: var(--error-color);
+  }
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.center {
+  text-align: center;
+}
+
+.size_s {
+  .title {
+    font: var(--font-m);
+  }
+
+  .text {
+    font: var(--font-s);
+  }
+}
+
+.size_m {
+  .title {
+    font: var(--font-l);
+  }
+
+  .text {
+    font: var(--font-m);
+  }
+}
+
+.size_l {
+  .title {
+    font: var(--font-xl);
+  }
+
+  .text {
+    font: var(--font-l);
+  }
+}
+
+.weight_regular {
+  .title,
+  .text {
+    font-weight: 400 !important;
+  }
+}
+
+.weight_medium {
+  .title,
+  .text {
+    font-weight: 500 !important;
+  }
+}
+
+.weight_semiBold {
+  .title,
+  .text {
+    font-weight: 600 !important;
+  }
+}
+
+.weight_extraBold {
+  .title,
+  .text {
+    font-weight: 800 !important;
+  }
+}
+
+.font_primary {
+  .title,
+  .text {
+    font-family: var(--font-family-primary) !important;
+  }
+}
+
+.font_secondary {
+  .title,
+  .text {
+    font-family: var(--font-family-secondary) !important;
+  }
+}
