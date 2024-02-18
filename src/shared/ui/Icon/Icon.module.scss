@@ -1,0 +1,23 @@
+.white {
+  fill: var(--white-color);
+}
+
+.primary {
+  fill: var(--primary-color);
+}
+
+.transparent {
+  fill: transparent;
+}
+
+.strokeWhite {
+  stroke: var(--white-color);
+}
+
+.strokePrimary path {
+  stroke: var(--primary-color);
+}
+
+.strokeTransparent {
+  stroke: transparent;
+}
