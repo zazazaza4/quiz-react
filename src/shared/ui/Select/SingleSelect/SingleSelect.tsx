@@ -3,6 +3,7 @@ import { ChangeEventHandler, useCallback } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 
 import { AppImage } from '../../AppImage';
+import { Skeleton } from '../../Skeleton';
 import { HStack } from '../../Stack';
 import { Text } from '../../Text';
 import { Select, SelectDefaultProps, SelectOption } from '../Select/Select';
@@ -41,7 +42,13 @@ export const SingleSelect = (props: SelectDefaultProps) => {
           checked={value === option.value}
           onChange={onChangeHandler}
         />
-        {option.image && <AppImage src={option.image} alt={option.value} />}
+        {option.image && (
+          <AppImage
+            src={option.image}
+            alt={option.value}
+            fallback={<Skeleton height={53} width={53} borderRadius="50%" />}
+          />
+        )}
         <Text text={option.value} />
       </HStack>
     ),

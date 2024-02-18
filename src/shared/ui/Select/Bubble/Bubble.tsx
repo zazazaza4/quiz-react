@@ -3,6 +3,7 @@ import { ChangeEventHandler, useCallback } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 
 import { AppImage } from '../../AppImage';
+import { Skeleton } from '../../Skeleton';
 import { VStack } from '../../Stack';
 import { Text } from '../../Text';
 import { Select, SelectDefaultProps, SelectOption } from '../Select/Select';
@@ -46,6 +47,7 @@ export const Bubble = (props: SelectDefaultProps) => {
               src={option.image}
               className={cls.image}
               alt={option.value}
+              fallback={<Skeleton height={25} width={25} borderRadius="50%" />}
             />
           )}
           <Text align="center" className={cls.text} text={option.value} />
