@@ -1,0 +1,44 @@
+.option {
+  width: 100%;
+  padding: 18px 20px;
+  border-radius: 16px;
+  background-color: var(--input-bg);
+  outline: 2px solid transparent;
+  transition: all 0.2s linear;
+  cursor: pointer;
+
+  &:hover {
+    outline: 2px solid var(--primary-color);
+    background: var(--primary-color-opacity);
+  }
+
+  &:has(input:checked) {
+    outline: 2px solid var(--primary-color);
+    background: var(--primary-color-opacity);
+  }
+}
+
+.input {
+  display: none !important;
+}
+
+.checkbox {
+  margin-left: auto;
+  width: 23px;
+  height: 23px;
+  background-color: #6d4376;
+  border: 1px solid var(--primary-color);
+  border-radius: 8px;
+
+  svg {
+    opacity: 0;
+  }
+}
+
+.option:has(input:checked) .checkbox {
+  background: var(--primary-color);
+
+  svg {
+    opacity: 1;
+  }
+}

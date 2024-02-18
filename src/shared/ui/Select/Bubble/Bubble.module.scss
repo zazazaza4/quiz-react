@@ -1,0 +1,41 @@
+.Bubble {
+  grid-template-rows: repeat(3, 100px);
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  overflow: auto;
+  padding: 10px;
+
+  & > .wrapperOption:nth-child(odd) {
+    justify-content: flex-start;
+  }
+
+  & > .wrapperOption:nth-child(even) {
+    justify-content: flex-end;
+  }
+}
+
+.input {
+  display: none !important;
+}
+
+.option {
+  width: 88px;
+  height: 88px;
+  background: var(--input-bg);
+  border-radius: 50%;
+  cursor: pointer;
+
+  &:has(input:checked) {
+    outline: 2px solid var(--primary-color);
+  }
+}
+
+.text p {
+  font-size: 13px !important;
+}
+
+.image {
+  width: 25px;
+  height: 25px;
+}

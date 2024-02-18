@@ -1,0 +1,32 @@
+.option {
+  width: 100%;
+  padding: 18px 20px;
+  border-radius: 16px;
+  background-color: var(--input-bg);
+  outline: 2px solid transparent;
+  transition: all 0.2s linear;
+  cursor: pointer;
+
+  &:hover {
+    background: var(--primary-color);
+  }
+
+  &:has(input:checked) {
+    outline: 2px solid var(--pink);
+    background: var(--primary-color);
+  }
+
+  &:has(input:checked) div.checkbox {
+    background: var(--pink);
+  }
+}
+
+.input {
+  display: none !important;
+}
+
+.directionRow {
+  flex-direction: column;
+  padding: 30px 25px;
+  gap: 10px;
+}
