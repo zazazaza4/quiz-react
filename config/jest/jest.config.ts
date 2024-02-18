@@ -36,4 +36,5 @@ export default {
   moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'json', 'node'],
   testEnvironment: 'jsdom',
   rootDir: '../../',
+  transformIgnorePatterns: ['node_modules/(?!axios)/'],
 };
