@@ -1,4 +1,20 @@
 {
+    "email": {
+        "title": "Correo electrónico",
+        "description": "Ingrese su correo electrónico para obtener acceso completo",
+        "placeholders": {
+            "email": "Su correo electrónico"
+        },
+        "errors": {
+            "invalidEmail": "Formato de correo electrónico no válido"
+        }
+    },
+    "privacyAndTerms": {
+        "agree": "Al continuar, acepto la",
+        "privacyPolicy": "Política de privacidad",
+        "and": "y",
+        "termsOfUse": "Términos de uso"
+    },
     "error": {
         "message": "Se ha producido un error.",
         "button": "Reintentar"
@@ -7,7 +23,8 @@
         "next": "Siguiente"
     },
     "findingCollections": "Buscando colecciones para ti...",
-    "downloadAnswersButton": {
-        "text": "Descargar mis respuestas"
-    }
+    "downloadAnswersButton": "Descargar mis respuestas",
+    "thankYou": "Gracias",
+    "forSupportingUs": "por apoyarnos y pasar el cuestionario",
+    "retakeQuiz": "Volver a realizar el cuestionario"
 }

@@ -13,7 +13,7 @@ interface PrivacyAndTermsProps {
 export const PrivacyAndTerms: FC<PrivacyAndTermsProps> = memo(
   (props: PrivacyAndTermsProps) => {
     const { className } = props;
-    const { t } = useTranslation('email');
+    const { t } = useTranslation();
 
     return (
       <p className={classNames(cls.PrivacyAndTerms, {}, [className])}>

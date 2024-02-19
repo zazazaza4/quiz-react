@@ -29,7 +29,7 @@ const reducers: ReducersList = {
 
 const EmailPage: FC<EmailPageProps> = memo((props: EmailPageProps) => {
   const { className } = props;
-  const { t } = useTranslation('email');
+  const { t } = useTranslation();
   const navigate = useNavigate();
 
   const onNextPage = () => {

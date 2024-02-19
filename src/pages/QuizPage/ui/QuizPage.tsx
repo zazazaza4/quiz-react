@@ -1,4 +1,5 @@
 import { FC, memo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 
@@ -9,7 +10,7 @@ import { getQuizIsLoading, getQuizTotal, QuizContent } from '@/entities/Quiz';
 
 import { getRouteLoading, getRouteQuiz } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { handleLanguageSelection } from '@/shared/lib/handleLanguageSelection/handleLanguageSelection';
+import { getLanguageToCode } from '@/shared/lib/getLanguageToCode/getLanguageToCode';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Skeleton } from '@/shared/ui/Skeleton';
 import { VStack } from '@/shared/ui/Stack';
@@ -28,6 +29,7 @@ const QuizPage: FC<QuizPageProps> = memo((props: QuizPageProps) => {
   const total = useSelector(getQuizTotal);
   const isLoading = useSelector(getQuizIsLoading);
   const navigate = useNavigate();
+  const { i18n } = useTranslation();
   const dispatch = useAppDispatch();
 
   if (!id) {
@@ -39,7 +41,8 @@ const QuizPage: FC<QuizPageProps> = memo((props: QuizPageProps) => {
     dispatch(answersActions.addAnswer(answer));
 
     if (id === '1') {
-      handleLanguageSelection(answer.answer as string);
+      const code = getLanguageToCode(answer.answer as string);
+      i18n.changeLanguage(code);
     }
 
     if (newId <= total) {

@@ -1,4 +1,20 @@
 {
+    "email": {
+        "title": "Email",
+        "description": "Entrez votre adresse e-mail pour obtenir un accès complet",
+        "placeholders": {
+            "email": "Votre email"
+        },
+        "errors": {
+            "invalidEmail": "Format d'email invalide"
+        }
+    },
+    "privacyAndTerms": {
+        "agree": "En continuant, j'accepte la",
+        "privacyPolicy": "Politique de confidentialité",
+        "and": "et",
+        "termsOfUse": "Conditions d'utilisation"
+    },
     "error": {
         "message": "Une erreur est survenue.",
         "button": "Réessayer"
@@ -7,7 +23,8 @@
         "next": "Suivant"
     },
     "findingCollections": "Recherche des collections pour vous...",
-    "downloadAnswersButton": {
-        "text": "Télécharger mes réponses"
-    }
+    "downloadAnswersButton": "Télécharger mes réponses",
+    "thankYou": "Merci",
+    "forSupportingUs": "pour nous soutenir et réussir le quiz",
+    "retakeQuiz": "Recommencer le quiz"
 }

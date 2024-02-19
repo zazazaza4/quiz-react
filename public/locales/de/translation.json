@@ -1,4 +1,20 @@
 {
+    "email": {
+        "title": "E-Mail",
+        "description": "Geben Sie Ihre E-Mail-Adresse ein, um vollen Zugriff zu erhalten",
+        "placeholders": {
+            "email": "Ihre E-Mail"
+        },
+        "errors": {
+            "invalidEmail": "Ungültiges E-Mail-Format"
+        }
+    },
+    "privacyAndTerms": {
+        "agree": "Durch die Fortsetzung stimme ich den",
+        "privacyPolicy": "Datenschutzrichtlinien",
+        "and": "und",
+        "termsOfUse": "Nutzungsbedingungen"
+    },
     "error": {
         "message": "Ein Fehler ist aufgetreten.",
         "button": "Erneut versuchen"
@@ -7,7 +23,8 @@
         "next": "Weiter"
     },
     "findingCollections": "Suche nach Sammlungen für Sie...",
-    "downloadAnswersButton": {
-        "text": "Meine Antworten herunterladen"
-    }
+    "downloadAnswersButton": "Meine Antworten herunterladen",
+    "thankYou": "Danke",
+    "forSupportingUs": "für die Unterstützung und das Bestehen des Quiz",
+    "retakeQuiz": "Quiz wiederholen"
 }

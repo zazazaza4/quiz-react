@@ -28,7 +28,7 @@ interface ResultPageProps {
 
 const ResultPage: FC<ResultPageProps> = memo((props: ResultPageProps) => {
   const { className } = props;
-  const { t } = useTranslation('result');
+  const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const answers = useSelector(getAnswersList);
   const userEmail = useSelector(getUserEmail);

@@ -1,4 +1,20 @@
 {
+    "email": {
+        "title": "Email",
+        "description": "Enter your email to get full access",
+        "placeholders": {
+            "email": "Your email"
+        },
+        "errors": {
+            "invalidEmail": "Invalid email format"
+        }
+    },
+    "privacyAndTerms": {
+        "agree": "By continuing, I agree with the",
+        "privacyPolicy": "Privacy Policy",
+        "and": "and",
+        "termsOfUse": "Terms of Use"
+    },
     "error": {
         "message": "An error occurred.",
         "button": "Retry"
@@ -7,7 +23,8 @@
         "next": "Next"
     },
     "findingCollections": "Finding collections for you...",
-    "downloadAnswersButton": {
-        "text": "Download my answers"
-    }
+    "downloadAnswersButton": "Download my answers",
+    "thankYou": "Thank you",
+    "forSupportingUs": "for supporting us and passing the quiz",
+    "retakeQuiz": "Retake quiz"
 }

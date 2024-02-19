@@ -12,9 +12,9 @@ i18n
     debug: __IS_DEV__,
     cleanCode: true,
     lowerCaseLng: true,
-    nonExplicitSupportedLngs: true,
     backend: {
-      loadPath: 'locales/{{lng}}/{{ns}}.json',
+      loadPath: '/locales/{{lng}}/{{ns}}.json',
+      overrideMimeType: false,
     },
     interpolation: {
       escapeValue: false,

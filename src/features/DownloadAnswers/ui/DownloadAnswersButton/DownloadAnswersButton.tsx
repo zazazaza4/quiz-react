@@ -47,7 +47,7 @@ export const DownloadAnswersButton: FC<DownloadAnswersButtonProps> = memo(
         className={classNames('', {}, [className])}
       >
         <Icon Svg={DownloadIcon} />
-        {t('downloadAnswersButton.text')}
+        {t('downloadAnswersButton')}
       </Button>
     );
   }

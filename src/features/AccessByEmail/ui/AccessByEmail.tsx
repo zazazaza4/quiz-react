@@ -27,7 +27,7 @@ interface AccessByEmailProps {
 export const AccessByEmail: FC<AccessByEmailProps> = memo(
   (props: AccessByEmailProps) => {
     const { className, onSuccess } = props;
-    const { t } = useTranslation('email');
+    const { t } = useTranslation();
     const dispatch = useAppDispatch();
     const userEmail = useSelector(getUserEmail);
 
