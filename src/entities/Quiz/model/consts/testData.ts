@@ -9,8 +9,8 @@ import RomanceImg from '@/shared/assets/images/romance-emoji.png';
 import WarewolfImg from '@/shared/assets/images/warewolf-emoji.png';
 import YoungAdultImg from '@/shared/assets/images/young-adult-emoji.png';
 
-import { QuizType } from '../../consts/quizConsts';
-import { Quiz } from '../../types/quiz';
+import { Quiz } from '../types/quiz';
+import { QuizType } from './quizConsts';
 
 export type QuizData = Record<string, Quiz[]>;
 

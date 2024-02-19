@@ -2,8 +2,8 @@ import { createEntityAdapter, createSlice } from '@reduxjs/toolkit';
 
 import { StateSchema } from '@/app/providers/StoreProvider';
 
+import { quizDataTotal } from '../consts/testData';
 import { fetchQuizList } from '../services/fetchQuizList/fetchQuizList ';
-import { quizDataTotal } from '../services/fetchQuizList/testData';
 import { Quiz, QuizSchema } from '../types/quiz';
 
 export const quizAdapter = createEntityAdapter<Quiz>({

@@ -1,3 +1,3 @@
 import { StateSchema } from '@/app/providers/StoreProvider';
 
-export const getQuizTotal = (state: StateSchema) => state.quiz.total;
+export const getQuizTotal = (state: StateSchema) => state.quiz?.total || 0;

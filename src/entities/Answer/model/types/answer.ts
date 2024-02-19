@@ -6,7 +6,5 @@ export interface Answer {
 }
 
 export interface AnswersSchema {
-  isLoading: boolean;
-  error?: string;
   answers: Answer[];
 }

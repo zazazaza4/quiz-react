@@ -3,8 +3,8 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import { ThunkConfig } from '@/app/providers/StoreProvider';
 
+import { quizData } from '../../consts/testData';
 import { Quiz } from '../../types/quiz';
-import { quizData } from './testData';
 
 export const fetchQuizList = createAsyncThunk<
   Quiz[],
