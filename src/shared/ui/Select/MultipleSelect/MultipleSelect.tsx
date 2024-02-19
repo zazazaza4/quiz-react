@@ -9,15 +9,25 @@ import { Select, SelectDefaultProps, SelectOption } from '../Select/Select';
 
 import cls from './MultipleSelect.module.scss';
 
-export const MultipleSelect = (props: SelectDefaultProps) => {
-  const { value, onChange } = props;
+interface MultipleSelectProps extends SelectDefaultProps<string[]> {
+  selectedValues: string[];
+}
+
+export const MultipleSelect = (props: MultipleSelectProps) => {
+  const { value = [], onChange } = props;
 
   const onChangeHandler: ChangeEventHandler<HTMLInputElement> = useCallback(
     (event) => {
-      const newValue = event.target.value;
-      onChange?.(newValue);
+      const selectedValue = event.target.value;
+      const isChecked = event.target.checked;
+
+      if (isChecked) {
+        onChange?.([...value, selectedValue]);
+      } else {
+        onChange?.(value.filter((val) => val !== selectedValue));
+      }
     },
-    [onChange]
+    [onChange, value]
   );
 
   const renderOptionElement = useCallback(
@@ -27,7 +37,7 @@ export const MultipleSelect = (props: SelectDefaultProps) => {
           className={cls.input}
           name="checkbox"
           type="checkbox"
-          value={value}
+          value={option.value}
           onChange={onChangeHandler}
         />
         <Text text={option.value} />
@@ -36,7 +46,7 @@ export const MultipleSelect = (props: SelectDefaultProps) => {
         </HStack>
       </HStack>
     ),
-    [onChangeHandler, value]
+    [onChangeHandler]
   );
 
   return <Select optionElement={renderOptionElement} {...props} />;

@@ -18,19 +18,20 @@ export interface SelectOption {
   image?: string;
 }
 
-export interface SelectDefaultProps {
+export interface SelectDefaultProps<T extends string | string[]> {
   className?: string;
   options?: SelectOption[];
-  value?: string;
-  onChange?: (value: string) => void;
+  value?: T;
+  onChange?: (value: T) => void;
   direction?: SelectDirection;
 }
 
-interface SelectProps extends SelectDefaultProps {
+interface SelectProps<T extends string | string[]>
+  extends SelectDefaultProps<T> {
   optionElement: (option: SelectOption) => JSX.Element;
 }
 
-export const Select = (props: SelectProps) => {
+export const Select = <T extends string | string[]>(props: SelectProps<T>) => {
   const {
     optionElement,
     className,

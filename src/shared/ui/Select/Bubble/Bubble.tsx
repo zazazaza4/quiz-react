@@ -10,15 +10,21 @@ import { Select, SelectDefaultProps, SelectOption } from '../Select/Select';
 
 import cls from './Bubble.module.scss';
 
-export const Bubble = (props: SelectDefaultProps) => {
-  const { value, onChange, className } = props;
+export const Bubble = (props: SelectDefaultProps<string[]>) => {
+  const { value = [], onChange, className } = props;
 
   const onChangeHandler: ChangeEventHandler<HTMLInputElement> = useCallback(
     (event) => {
-      const newValue = event.target.value;
-      onChange?.(newValue);
+      const selectedValue = event.target.value;
+      const isChecked = event.target.checked;
+
+      if (isChecked) {
+        onChange?.([...value, selectedValue]);
+      } else {
+        onChange?.(value.filter((val) => val !== selectedValue));
+      }
     },
-    [onChange]
+    [onChange, value]
   );
 
   const renderOptionElement = useCallback(
@@ -39,7 +45,7 @@ export const Bubble = (props: SelectDefaultProps) => {
             className={cls.input}
             name="checkbox"
             type="checkbox"
-            value={value}
+            value={option.value}
             onChange={onChangeHandler}
           />
           {option.image && (
@@ -54,7 +60,7 @@ export const Bubble = (props: SelectDefaultProps) => {
         </VStack>
       </VStack>
     ),
-    [onChangeHandler, value]
+    [onChangeHandler]
   );
 
   return (
