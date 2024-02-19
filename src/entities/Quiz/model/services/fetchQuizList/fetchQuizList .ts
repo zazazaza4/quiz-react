@@ -1,3 +1,4 @@
+import i18next from 'i18next';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import { ThunkConfig } from '@/app/providers/StoreProvider';
@@ -10,11 +11,13 @@ export const fetchQuizList = createAsyncThunk<
   void,
   ThunkConfig<string>
 >('quiz/fetchQuizList', async (_, { extra }) => {
+  const lang = i18next.language;
+
   try {
-    const response = await extra.api.get('/quiz');
+    const response = await extra.api.get(`/quiz/${lang}`);
 
     return response.data;
   } catch (error) {
-    return quizData;
+    return quizData[lang];
   }
 });

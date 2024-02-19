@@ -1,14 +1,11 @@
 import { useCallback, useMemo, useState } from 'react';
-import { useSelector } from 'react-redux';
-
-import { StateSchema } from '@/app/providers/StoreProvider';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { VStack } from '@/shared/ui/Stack';
 import { Text } from '@/shared/ui/Text';
 
 import { QuizType } from '../../model/consts/quizConsts';
-import { getQuizList } from '../../model/slice/quizSlice';
+import { Quiz } from '../../model/types/quiz';
 import { QuizBubbleSelect } from '../QuizBubbleSelect/QuizBubbleSelect';
 import { QuizMultipleSelect } from '../QuizMultipleSelect/QuizMultipleSelect';
 import { QuizSingleSelect } from '../QuizSingleSelect/QuizSingleSelect';
@@ -18,15 +15,12 @@ import cls from './QuizContent.module.scss';
 
 interface QuizContentProps<T> {
   className?: string;
-  quizId: string;
+  quiz: Quiz;
   onNext: (value: T, nextId?: number) => void;
 }
 
 export const QuizContent = <T extends any>(props: QuizContentProps<T>) => {
-  const { className, quizId, onNext } = props;
-  const quizItem = useSelector((state: StateSchema) =>
-    getQuizList.selectById(state, quizId)
-  );
+  const { className, quiz, onNext } = props;
 
   const [isVisible, setIsVisible] = useState(true);
 
@@ -35,9 +29,9 @@ export const QuizContent = <T extends any>(props: QuizContentProps<T>) => {
       setIsVisible(false);
       setTimeout(() => {
         const result = {
-          order: quizItem?.id,
-          title: quizItem?.question,
-          type: quizItem?.type,
+          order: quiz?.id,
+          title: quiz?.question,
+          type: quiz?.type,
           answer: value,
         } as T;
 
@@ -45,23 +39,23 @@ export const QuizContent = <T extends any>(props: QuizContentProps<T>) => {
         setIsVisible(true);
       }, 500);
     },
-    [onNext, quizItem?.id, quizItem?.question, quizItem?.type]
+    [onNext, quiz?.id, quiz?.question, quiz?.type]
   );
 
   const content = useMemo(() => {
-    switch (quizItem?.type) {
+    switch (quiz?.type) {
       case QuizType.SINGLE_SELECT:
-        return <QuizSingleSelect item={quizItem} onNext={handleNext} />;
+        return <QuizSingleSelect item={quiz} onNext={handleNext} />;
       case QuizType.SINGLE_SELECT_IMAGE:
-        return <QuizSingleSelectImage item={quizItem} onNext={handleNext} />;
+        return <QuizSingleSelectImage item={quiz} onNext={handleNext} />;
       case QuizType.BUBBLE:
-        return <QuizBubbleSelect item={quizItem} onNext={handleNext} />;
+        return <QuizBubbleSelect item={quiz} onNext={handleNext} />;
       case QuizType.MULTIPLE_SELECT:
-        return <QuizMultipleSelect item={quizItem} onNext={handleNext} />;
+        return <QuizMultipleSelect item={quiz} onNext={handleNext} />;
       default:
         return null;
     }
-  }, [handleNext, quizItem]);
+  }, [handleNext, quiz]);
 
   return (
     <VStack
@@ -70,9 +64,9 @@ export const QuizContent = <T extends any>(props: QuizContentProps<T>) => {
       className={classNames(cls.QuizContent, {}, [className])}
     >
       <VStack gap="16" className={cls.question} align="center">
-        <Text align="center" title={quizItem?.question} />
-        {quizItem?.description && (
-          <Text align="center" theme="gray" text={quizItem?.description} />
+        <Text align="center" title={quiz?.question} />
+        {quiz?.description && (
+          <Text align="center" theme="gray" text={quiz?.description} />
         )}
       </VStack>
       <VStack

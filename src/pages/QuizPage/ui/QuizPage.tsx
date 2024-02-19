@@ -1,20 +1,17 @@
-import { FC, memo } from 'react';
-import { useTranslation } from 'react-i18next';
+import { FC, memo, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 import { Page } from '@/widgets/Page';
 
-import { Answer, answersActions } from '@/entities/Answer';
-import { getQuizIsLoading, getQuizTotal, QuizContent } from '@/entities/Quiz';
+import { fetchQuizList, getQuizIsLoading, getQuizTotal } from '@/entities/Quiz';
 
-import { getRouteLoading, getRouteQuiz } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { getLanguageToCode } from '@/shared/lib/getLanguageToCode/getLanguageToCode';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Skeleton } from '@/shared/ui/Skeleton';
 import { VStack } from '@/shared/ui/Stack';
 
+import { QuizPageContent } from './QuizPageContent/QuizPageContent';
 import { QuizPageHeader } from './QuizPageHeader/QuizPageHeader';
 
 import cls from './QuizPage.module.scss';
@@ -28,29 +25,15 @@ const QuizPage: FC<QuizPageProps> = memo((props: QuizPageProps) => {
   const { id } = useParams<{ id: string }>();
   const total = useSelector(getQuizTotal);
   const isLoading = useSelector(getQuizIsLoading);
-  const navigate = useNavigate();
-  const { i18n } = useTranslation();
   const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(fetchQuizList());
+  }, [dispatch]);
 
   if (!id) {
     return null;
   }
-
-  const onNext = (answer: Answer, nextId: number = 1) => {
-    const newId = Number(id) + nextId;
-    dispatch(answersActions.addAnswer(answer));
-
-    if (id === '1') {
-      const code = getLanguageToCode(answer.answer as string);
-      i18n.changeLanguage(code);
-    }
-
-    if (newId <= total) {
-      navigate(getRouteQuiz(String(newId)));
-    } else {
-      navigate(getRouteLoading());
-    }
-  };
 
   if (isLoading) {
     return (
@@ -73,7 +56,7 @@ const QuizPage: FC<QuizPageProps> = memo((props: QuizPageProps) => {
     <Page className={classNames(cls.QuizPage, {}, [className])}>
       <VStack max className="container" align="center">
         <QuizPageHeader current={Number(id)} total={total} />
-        <QuizContent className={cls.contnet} quizId={id} onNext={onNext} />
+        <QuizPageContent className={cls.content} quizId={id} total={total} />
       </VStack>
     </Page>
   );

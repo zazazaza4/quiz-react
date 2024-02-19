@@ -34,7 +34,12 @@ export const QuizPageHeader: FC<QuizPageHeaderProps> = memo(
         className={classNames(cls.QuizPageHeader, {}, [className])}
       >
         <HStack max justify="center">
-          <Button size="none" onClick={onPrevPage} theme="clear">
+          <Button
+            aria-label="Go back to previous page"
+            size="none"
+            onClick={onPrevPage}
+            theme="clear"
+          >
             <Icon Svg={ArrowLeftIcon} theme="transparent" strokeTheme="white" />
           </Button>
           <HStack className={cls.score}>
