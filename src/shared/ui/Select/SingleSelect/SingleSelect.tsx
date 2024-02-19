@@ -10,7 +10,7 @@ import { Select, SelectDefaultProps, SelectOption } from '../Select/Select';
 
 import cls from './SingleSelect.module.scss';
 
-export const SingleSelect = (props: SelectDefaultProps) => {
+export const SingleSelect = (props: SelectDefaultProps<string>) => {
   const { value, onChange, direction } = props;
 
   const onChangeHandler: ChangeEventHandler<HTMLInputElement> = useCallback(
