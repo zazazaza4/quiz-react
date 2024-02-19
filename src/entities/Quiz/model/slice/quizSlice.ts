@@ -3,7 +3,7 @@ import { createEntityAdapter, createSlice } from '@reduxjs/toolkit';
 import { StateSchema } from '@/app/providers/StoreProvider';
 
 import { fetchQuizList } from '../services/fetchQuizList/fetchQuizList ';
-import { quizData } from '../services/fetchQuizList/testData';
+import { quizDataTotal } from '../services/fetchQuizList/testData';
 import { Quiz, QuizSchema } from '../types/quiz';
 
 export const quizAdapter = createEntityAdapter<Quiz>({
@@ -44,7 +44,7 @@ export const quizSlice = createSlice({
       .addCase(fetchQuizList.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
-        state.total = quizData.length;
+        state.total = quizDataTotal;
       });
   },
 });

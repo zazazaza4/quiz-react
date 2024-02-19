@@ -265,3 +265,5 @@ export const quizData: QuizData = {
     },
   ],
 };
+
+export const quizDataTotal = quizData.en.length;
