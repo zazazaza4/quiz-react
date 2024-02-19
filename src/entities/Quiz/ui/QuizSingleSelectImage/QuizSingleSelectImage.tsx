@@ -7,7 +7,7 @@ import { Quiz } from '../../model/types/quiz';
 interface QuizSingleSelectImageProps {
   className?: string;
   item: Quiz;
-  onNext?: () => void;
+  onNext: (value: string, nextId?: number) => void;
 }
 
 export const QuizSingleSelectImage: FC<QuizSingleSelectImageProps> = memo(
@@ -22,7 +22,7 @@ export const QuizSingleSelectImage: FC<QuizSingleSelectImageProps> = memo(
     const onChangeHandler = useCallback(
       (value: string) => {
         setSelectedOption(value);
-        onNext?.();
+        onNext?.(value);
       },
       [onNext]
     );

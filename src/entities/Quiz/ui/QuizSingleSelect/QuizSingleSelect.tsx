@@ -7,7 +7,7 @@ import { Quiz } from '../../model/types/quiz';
 interface QuizSingleSelectProps {
   className?: string;
   item: Quiz;
-  onNext?: () => void;
+  onNext: (value: string, nextId?: number) => void;
 }
 
 export const QuizSingleSelect: FC<QuizSingleSelectProps> = memo(
@@ -22,7 +22,7 @@ export const QuizSingleSelect: FC<QuizSingleSelectProps> = memo(
     const onChangeHandler = useCallback(
       (value: string) => {
         setSelectedOption(value);
-        onNext?.();
+        onNext?.(value);
       },
       [onNext]
     );
