@@ -1,4 +1,5 @@
 import { FC, memo, useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
 import { Page } from '@/widgets/Page';
@@ -18,6 +19,7 @@ interface LoadingPageProps {
 export const LoadingPage: FC<LoadingPageProps> = memo(
   (props: LoadingPageProps) => {
     const { className } = props;
+    const { t } = useTranslation();
     const [progress, setProgress] = useState(0);
     const navigate = useNavigate();
 
@@ -38,7 +40,7 @@ export const LoadingPage: FC<LoadingPageProps> = memo(
       <Page className={classNames('', {}, [className])}>
         <VStack align="center" max gap="40">
           <CircleProgress size="252" progress={progress} animate />
-          <Text className={cls.text} text="Finding collections for you..." />
+          <Text className={cls.text} text={t('findingCollections')} />
         </VStack>
       </Page>
     );

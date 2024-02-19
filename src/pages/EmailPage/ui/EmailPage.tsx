@@ -1,4 +1,5 @@
 import { FC, memo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
 import { Page } from '@/widgets/Page';
@@ -28,6 +29,7 @@ const reducers: ReducersList = {
 
 const EmailPage: FC<EmailPageProps> = memo((props: EmailPageProps) => {
   const { className } = props;
+  const { t } = useTranslation('email');
   const navigate = useNavigate();
 
   const onNextPage = () => {
@@ -35,19 +37,20 @@ const EmailPage: FC<EmailPageProps> = memo((props: EmailPageProps) => {
   };
 
   return (
-    <DynamicModuleLoader reducers={reducers}>
+    <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
       <Page
         data-testid="EmailPage"
         className={classNames(cls.EmailPage, {}, [className])}
       >
         <VStack max className="container" align="center">
           <VStack gap="12" max align="center">
-            <Text weight="extraBold" title="Email" />
+            <Text weight="extraBold" title={t('email.title')} />
             <Text
               weight="regular"
               size="size_s"
               theme="gray"
-              text="Enter your email to get full access"
+              align="center"
+              text={t('email.description')}
             />
           </VStack>
           <AccessByEmail onSuccess={onNextPage} className={cls.access} />
