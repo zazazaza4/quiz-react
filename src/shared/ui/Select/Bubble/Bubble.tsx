@@ -10,21 +10,26 @@ import { Select, SelectDefaultProps, SelectOption } from '../Select/Select';
 
 import cls from './Bubble.module.scss';
 
-export const Bubble = (props: SelectDefaultProps<string[]>) => {
-  const { value = [], onChange, className } = props;
+interface BubbleProps extends SelectDefaultProps<string[]> {
+  maxItems?: number;
+}
+
+export const Bubble = (props: BubbleProps) => {
+  const { value = [], onChange, className, maxItems = 3 } = props;
 
   const onChangeHandler: ChangeEventHandler<HTMLInputElement> = useCallback(
     (event) => {
       const selectedValue = event.target.value;
       const isChecked = event.target.checked;
+      const selectedCount = value.length;
 
-      if (isChecked) {
+      if (isChecked && maxItems > selectedCount) {
         onChange?.([...value, selectedValue]);
-      } else {
+      } else if (!isChecked) {
         onChange?.(value.filter((val) => val !== selectedValue));
       }
     },
-    [onChange, value]
+    [maxItems, onChange, value]
   );
 
   const renderOptionElement = useCallback(
@@ -43,8 +48,9 @@ export const Bubble = (props: SelectDefaultProps<string[]>) => {
         >
           <input
             className={cls.input}
-            name="checkbox"
+            name={option.value}
             type="checkbox"
+            checked={value.includes(option.value)}
             value={option.value}
             onChange={onChangeHandler}
           />
@@ -60,7 +66,7 @@ export const Bubble = (props: SelectDefaultProps<string[]>) => {
         </VStack>
       </VStack>
     ),
-    [onChangeHandler]
+    [onChangeHandler, value]
   );
 
   return (

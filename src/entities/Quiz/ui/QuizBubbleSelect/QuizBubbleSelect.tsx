@@ -37,7 +37,9 @@ export const QuizBubbleSelect: FC<QuizBubbleSelectProps> = memo(
           value={selectedOptions}
           onChange={onChangeHandler}
         />
-        <Button onClick={onNextHandle}>{t('buttons.next')}</Button>
+        <Button isDisabled={selectedOptions.length < 1} onClick={onNextHandle}>
+          {t('buttons.next')}
+        </Button>
       </VStack>
     );
   }
