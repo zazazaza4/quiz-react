@@ -1,15 +1,19 @@
 {
+    "email": {
+        "title": "Email",
+        "description": "Entrez votre adresse e-mail pour obtenir un accès complet",
+        "placeholders": {
+            "email": "Votre email"
+        },
+        "errors": {
+            "invalidEmail": "Format d'email invalide"
+        }
+    },
     "privacyAndTerms": {
-        "agree": "En continuant, j'accepte le",
+        "agree": "En continuant, j'accepte la",
         "privacyPolicy": "Politique de confidentialité",
         "and": "et",
         "termsOfUse": "Conditions d'utilisation"
-    },
-    "placeholders": {
-        "email": "Votre adresse e-mail"
-    },
-    "errors": {
-        "invalidEmail": "Format d'e-mail invalide"
     },
     "buttons": {
         "next": "Suivant"

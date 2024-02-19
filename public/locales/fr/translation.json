@@ -5,5 +5,9 @@
     },
     "buttons": {
         "next": "Suivant"
+    },
+    "findingCollections": "Recherche des collections pour vous...",
+    "downloadAnswersButton": {
+        "text": "Télécharger mes réponses"
     }
 }
