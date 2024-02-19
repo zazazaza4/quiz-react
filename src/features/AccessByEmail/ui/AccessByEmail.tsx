@@ -27,8 +27,8 @@ interface AccessByEmailProps {
 export const AccessByEmail: FC<AccessByEmailProps> = memo(
   (props: AccessByEmailProps) => {
     const { className, onSuccess } = props;
-    const dispatch = useAppDispatch();
     const { t } = useTranslation('email');
+    const dispatch = useAppDispatch();
     const userEmail = useSelector(getUserEmail);
 
     const [isNotValid, setIsNotValid] = useState<boolean>(false);
@@ -54,10 +54,12 @@ export const AccessByEmail: FC<AccessByEmailProps> = memo(
             isError={isNotValid}
             autofocus
             value={userEmail}
-            placeholder="Your email"
+            placeholder={t('email.placeholders.email')}
             onChange={onChangeEmail}
           />
-          {isNotValid && <Text text={t('errors.invalidEmail')} theme="error" />}
+          {isNotValid && (
+            <Text text={t('email.errors.invalidEmail')} theme="error" />
+          )}
         </VStack>
 
         <PrivacyAndTerms />
@@ -66,7 +68,7 @@ export const AccessByEmail: FC<AccessByEmailProps> = memo(
           isDisabled={userEmail.length <= 0 || isNotValid}
           className={cls.button}
         >
-          Next
+          {t('buttons.next')}
         </Button>
       </VStack>
     );
