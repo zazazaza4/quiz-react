@@ -4,10 +4,13 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 import { Page } from '@/widgets/Page';
 
+import { Answer, answersActions } from '@/entities/Answer';
 import { getQuizIsLoading, getQuizTotal, QuizContent } from '@/entities/Quiz';
 
 import { getRouteLoading, getRouteQuiz } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { handleLanguageSelection } from '@/shared/lib/handleLanguageSelection/handleLanguageSelection';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Skeleton } from '@/shared/ui/Skeleton';
 import { VStack } from '@/shared/ui/Stack';
 
@@ -25,13 +28,19 @@ const QuizPage: FC<QuizPageProps> = memo((props: QuizPageProps) => {
   const total = useSelector(getQuizTotal);
   const isLoading = useSelector(getQuizIsLoading);
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
 
   if (!id) {
     return null;
   }
 
-  const onNext = (nextId: number = 1) => {
+  const onNext = (answer: Answer, nextId: number = 1) => {
     const newId = Number(id) + nextId;
+    dispatch(answersActions.addAnswer(answer));
+
+    if (id === '1') {
+      handleLanguageSelection(answer.answer as string);
+    }
 
     if (newId <= total) {
       navigate(getRouteQuiz(String(newId)));
