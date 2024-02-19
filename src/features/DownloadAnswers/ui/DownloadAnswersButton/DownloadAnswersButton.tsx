@@ -1,18 +1,13 @@
 import { FC, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { Answer } from '@/entities/Answer';
+
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button } from '@/shared/ui/Button';
 import { Icon } from '@/shared/ui/Icon';
 
 import DownloadIcon from '@/shared/assets/icons/download.svg';
-
-interface Answer {
-  order: number;
-  title: string;
-  type: string;
-  answer: string;
-}
 
 interface DownloadAnswersButtonProps {
   className?: string;
@@ -25,18 +20,22 @@ export const DownloadAnswersButton: FC<DownloadAnswersButtonProps> = memo(
     const { t } = useTranslation();
 
     const onDownload = () => {
-      const keys = Object.keys(answers[0]);
+      const keys = Object.keys(answers[0]) as (keyof Answer)[];
 
-      const csvContent = [keys.join(',')].join('\n');
+      const csvHeader = `${keys.join(',')}\n`;
 
-      const csv =
-        `data:text/csv;charset=utf-8,` +
-        `Order,Title,Type,Answer\n${csvContent}`;
+      const csvRows = answers
+        .map((answer) => keys.map((key) => `"${answer[key]}"`).join(','))
+        .join('\n');
 
-      const encodedUri = encodeURI(csv);
+      const csvContent = csvHeader + csvRows;
+
+      const csvDataUri = `data:text/csv;charset=utf-8,${encodeURIComponent(csvContent)}`;
+
       const link = document.createElement('a');
-      link.setAttribute('href', encodedUri);
+      link.setAttribute('href', csvDataUri);
       link.setAttribute('download', 'my_answers.csv');
+
       document.body.appendChild(link);
       link.click();
     };
@@ -48,7 +47,7 @@ export const DownloadAnswersButton: FC<DownloadAnswersButtonProps> = memo(
         className={classNames('', {}, [className])}
       >
         <Icon Svg={DownloadIcon} />
-        Download my answers
+        {t('downloadAnswersButton.text')}
       </Button>
     );
   }
