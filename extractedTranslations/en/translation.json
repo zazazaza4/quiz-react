@@ -1,0 +1,26 @@
+{
+  "buttons": {
+    "next": ""
+  },
+  "downloadAnswersButton": "",
+  "email": {
+    "description": "",
+    "errors": {
+      "invalidEmail": ""
+    },
+    "placeholders": {
+      "email": ""
+    },
+    "title": ""
+  },
+  "findingCollections": "",
+  "forSupportingUs": "",
+  "privacyAndTerms": {
+    "agree": "",
+    "and": "",
+    "privacyPolicy": "",
+    "termsOfUse": ""
+  },
+  "retakeQuiz": "",
+  "thankYou": ""
+}
