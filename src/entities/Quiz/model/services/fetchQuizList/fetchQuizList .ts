@@ -9,7 +9,7 @@ export const fetchQuizList = createAsyncThunk<
   Quiz[],
   void,
   ThunkConfig<string>
->('quiz/fetchQuizList', async (_, { extra, rejectWithValue }) => {
+>('quiz/fetchQuizList', async (_, { extra }) => {
   try {
     const response = await extra.api.get('/quiz');
 
