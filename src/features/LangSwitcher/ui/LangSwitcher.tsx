@@ -2,9 +2,11 @@ import { FC, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { Answer } from '@/entities/Answer';
-import { QuizContent, QuizType } from '@/entities/Quiz';
+import { QuizContent } from '@/entities/Quiz';
 
 import { getLanguageToCode } from '@/shared/lib/getLanguageToCode/getLanguageToCode';
+
+import { langQuiz } from '../model/consts/langConsts';
 
 interface LangSwitcherProps {
   className?: string;
@@ -26,18 +28,7 @@ export const LangSwitcher: FC<LangSwitcherProps> = memo(
     return (
       <QuizContent
         className={className}
-        quiz={{
-          id: '1',
-          type: QuizType.SINGLE_SELECT,
-          question: 'What is your preferred language?',
-          description: 'Choose language',
-          options: [
-            { value: 'English' },
-            { value: 'French' },
-            { value: 'German' },
-            { value: 'Spanish' },
-          ],
-        }}
+        quiz={langQuiz}
         onNext={changeLanguage}
       />
     );
