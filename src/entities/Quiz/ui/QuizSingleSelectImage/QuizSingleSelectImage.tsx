@@ -1,8 +1,11 @@
 import { FC, memo, useCallback, useState } from 'react';
 
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { SingleSelect } from '@/shared/ui/Select';
 
 import { Quiz } from '../../model/types/quiz';
+
+import cls from './QuizSingleSelectImage.module.scss';
 
 interface QuizSingleSelectImageProps {
   className?: string;
@@ -30,7 +33,7 @@ export const QuizSingleSelectImage: FC<QuizSingleSelectImageProps> = memo(
     return (
       <SingleSelect
         direction="row"
-        className={className}
+        className={classNames(cls.QuizSingleSelectImage, {}, [className])}
         options={options}
         value={selectedOption}
         onChange={onChangeHandler}
