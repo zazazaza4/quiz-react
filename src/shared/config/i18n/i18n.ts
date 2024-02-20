@@ -39,6 +39,7 @@ i18n
       caches: ['localStorage', 'cookie'],
       excludeCacheFor: ['cimode'],
       cookieMinutes: 10,
+      convertDetectedLanguage: (lng: string) => lng.split('-')[0],
     },
   });
 
