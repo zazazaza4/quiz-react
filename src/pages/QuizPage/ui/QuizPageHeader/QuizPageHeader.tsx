@@ -16,11 +16,12 @@ interface QuizPageHeaderProps {
   className?: string;
   current: number;
   total: number;
+  isShowBackButton?: boolean;
 }
 
 export const QuizPageHeader: FC<QuizPageHeaderProps> = memo(
   (props: QuizPageHeaderProps) => {
-    const { className, current, total } = props;
+    const { className, current, total, isShowBackButton = true } = props;
     const navigate = useNavigate();
 
     const onPrevPage = () => {
@@ -34,14 +35,20 @@ export const QuizPageHeader: FC<QuizPageHeaderProps> = memo(
         className={classNames(cls.QuizPageHeader, {}, [className])}
       >
         <HStack max justify="center">
-          <Button
-            aria-label="Go back to previous page"
-            size="none"
-            onClick={onPrevPage}
-            theme="clear"
-          >
-            <Icon Svg={ArrowLeftIcon} theme="transparent" strokeTheme="white" />
-          </Button>
+          {isShowBackButton && (
+            <Button
+              aria-label="Go back to previous page"
+              size="none"
+              onClick={onPrevPage}
+              theme="clear"
+            >
+              <Icon
+                Svg={ArrowLeftIcon}
+                theme="transparent"
+                strokeTheme="white"
+              />
+            </Button>
+          )}
           <HStack className={cls.score}>
             <Text theme="primary" text={`${current}`} />
             <Text text={`/${total}`} />
