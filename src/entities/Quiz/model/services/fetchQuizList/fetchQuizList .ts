@@ -16,6 +16,10 @@ export const fetchQuizList = createAsyncThunk<
   try {
     const response = await extra.api.get(`/quiz/${lang}`);
 
+    if (!response.data) {
+      throw new Error('error');
+    }
+
     return response.data;
   } catch (error) {
     return quizData[lang];
