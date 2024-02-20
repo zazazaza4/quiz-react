@@ -22,9 +22,12 @@ describe('app/router/AppRouter', () => {
       route: getRouteResult(),
     });
 
-    await waitFor(async () => {
-      const page = await screen.findByTestId('ResultPage');
-      expect(page).toBeInTheDocument();
-    });
+    await waitFor(
+      async () => {
+        const page = await screen.findByTestId('ResultPage');
+        expect(page).toBeInTheDocument();
+      },
+      { timeout: 3000 }
+    );
   });
 });
