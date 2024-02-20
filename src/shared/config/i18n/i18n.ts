@@ -21,6 +21,27 @@ i18n
     },
     supportedLngs: ['en', 'fr', 'de', 'es'],
     load: 'languageOnly',
+    detection: {
+      order: [
+        'querystring',
+        'cookie',
+        'localStorage',
+        'sessionStorage',
+        'navigator',
+        'htmlTag',
+        'path',
+        'subdomain',
+      ],
+      lookupQuerystring: 'lng',
+      lookupCookie: 'i18next',
+      lookupLocalStorage: 'i18nextLng',
+      lookupSessionStorage: 'i18nextLng',
+      caches: ['localStorage', 'cookie'],
+      excludeCacheFor: ['cimode'],
+      cookieMinutes: 10,
+      cookieDomain: 'yourdomain.com',
+      htmlTag: document.documentElement,
+    },
   });
 
 export default i18n;
