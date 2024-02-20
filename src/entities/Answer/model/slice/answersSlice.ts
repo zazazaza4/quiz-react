@@ -5,7 +5,6 @@ import { ANSWERS_LOCALSTORAGE_KEY } from '@/shared/const/localStorage';
 import { Answer, AnswersSchema } from '../types/answer';
 
 const initialState: AnswersSchema = {
-  isLoading: false,
   answers: [],
 };
 
