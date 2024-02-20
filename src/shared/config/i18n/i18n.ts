@@ -12,6 +12,7 @@ i18n
     debug: __IS_DEV__,
     cleanCode: true,
     lowerCaseLng: true,
+    keySeparator: false,
     backend: {
       loadPath: '/locales/{{lng}}/{{ns}}.json',
       overrideMimeType: false,
@@ -21,6 +22,25 @@ i18n
     },
     supportedLngs: ['en', 'fr', 'de', 'es'],
     load: 'languageOnly',
+    detection: {
+      order: [
+        'querystring',
+        'cookie',
+        'localStorage',
+        'sessionStorage',
+        'navigator',
+        'htmlTag',
+        'path',
+        'subdomain',
+      ],
+      lookupQuerystring: 'lng',
+      lookupCookie: 'i18next',
+      lookupLocalStorage: 'i18nextLng',
+      lookupSessionStorage: 'i18nextLng',
+      caches: ['localStorage', 'cookie'],
+      excludeCacheFor: ['cimode'],
+      cookieMinutes: 10,
+    },
   });
 
 export default i18n;
