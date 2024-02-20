@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { PageError } from './PageError';
+import { PageLoader } from './PageLoader';
 
 const meta = {
-  title: 'widgets/PageError',
-  component: PageError,
+  title: 'widgets/PageLoader',
+  component: PageLoader,
   tags: ['autodocs'],
   argTypes: {},
-} satisfies Meta<typeof PageError>;
+} satisfies Meta<typeof PageLoader>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

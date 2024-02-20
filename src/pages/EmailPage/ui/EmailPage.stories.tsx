@@ -2,17 +2,19 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
-import { Page } from './Page';
+import EmailPage from './EmailPage';
 
 const meta = {
-  title: 'widgets/Page',
-  component: Page,
+  title: 'pages/EmailPage',
+  component: EmailPage,
   tags: ['autodocs'],
   argTypes: {},
-} satisfies Meta<typeof Page>;
+} satisfies Meta<typeof EmailPage>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {};
+export const Primary: Story = {
+  args: {},
+};
 Primary.decorators = [StoreDecorator({})];

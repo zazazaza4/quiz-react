@@ -2,14 +2,14 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
-import { Page } from './Page';
+import ResultPage from './ResultPage';
 
 const meta = {
-  title: 'widgets/Page',
-  component: Page,
+  title: 'pages/ResultPage',
+  component: ResultPage,
   tags: ['autodocs'],
   argTypes: {},
-} satisfies Meta<typeof Page>;
+} satisfies Meta<typeof ResultPage>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
