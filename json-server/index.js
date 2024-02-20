@@ -9,6 +9,18 @@ const router = jsonServer.router(path.resolve(__dirname, 'db.json'));
 server.use(jsonServer.defaults({}));
 server.use(jsonServer.bodyParser);
 
+server.get('/quiz/:lang', (req, res) => {
+  const {lang} = req.params;
+  const data = router.db.get('quiz').get(lang).value();
+
+  if (data) {
+    res.json(data);
+  } else {
+    res.status(404).json({ message: `Quiz for language ${lang} not found` });
+  }
+});
+
+
 server.use(async (req, res, next) => {
   await new Promise((res) => {
     setTimeout(res, 800);

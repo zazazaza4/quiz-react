@@ -1,108 +1,428 @@
 {
-  "quiz": [
-    {
-      "id": "1",
-      "question": "What is your preferred language?",
-      "description": "Choose language",
-      "options": [
-        {
-          "value": "English"
-        },
-        {
-          "value": "French"
-        },
-        {
-          "value": "German"
-        },
-        {
-          "value": "Spanish"
-        }
-      ],
-      "type": "single-select"
-    },
-    {
-      "id": "2",
-      "question": "What gender do you identify with?",
-      "description": "Please share how do you identify yourself",
-      "options": [
-        {
-          "value": "Female"
-        },
-        {
-          "value": "Male"
-        },
-        {
-          "value": "Other"
-        }
-      ],
-      "type": "single-select"
-    },
-    {
-      "id": "3",
-      "question": "What is your age?",
-      "options": [
-        {
-          "value": "18-25 years"
-        },
-        {
-          "value": "30-39 years"
-        },
-        {
-          "value": "40-49 years"
-        },
-        {
-          "value": "50+"
-        }
-      ],
-      "type": "single-select"
-    },
-    {
-      "id": "4",
-      "question": "What do you hate the most in a book?",
-      "options": [
-        {
-          "value": "Lack of logic"
-        },
-        {
-          "value": "A slow speed"
-        },
-        {
-          "value": "Lack of humor"
-        },
-        {
-          "value": "Way too generic ending"
-        }
-      ],
-      "type": "multiple-select"
-    },
-    {
-      "id": "5",
-      "question": "What are your favorite topics?",
-      "description": "Choose up to 3 topics you like",
-      "options": [
-        {
-          "value": "Werewolf"
-        },
-        {
-          "value": "Romance"
-        },
-        {
-          "value": "Action"
-        },
-        {
-          "value": "Young Adult"
-        },
-        {
-          "value": "Royal Obsession"
-        },
-        {
-          "value": "Bad Boy"
-        },
-        {
-          "value": "Billionaire"
-        }
-      ],
-      "type": "bubble"
-    }
-  ]
+  "quiz": {
+    "en": [
+      {
+        "id": "1",
+        "question": "What is your preferred language?",
+        "description": "Choose language",
+        "options": [
+          {
+            "value": "English"
+          },
+          {
+            "value": "French"
+          },
+          {
+            "value": "German"
+          },
+          {
+            "value": "Spanish"
+          }
+        ],
+        "type": "single-select"
+      },
+      {
+        "id": "2",
+        "question": "What gender do you identify with?",
+        "description": "Please share how do you identify yourself",
+        "options": [
+          {
+            "value": "Female"
+          },
+          {
+            "value": "Male"
+          },
+          {
+            "value": "Other"
+          }
+        ],
+        "type": "single-select"
+      },
+      {
+        "id": "3",
+        "question": "What is your age?",
+        "options": [
+          {
+            "value": "18-25 years"
+          },
+          {
+            "value": "30-39 years"
+          },
+          {
+            "value": "40-49 years"
+          },
+          {
+            "value": "50+"
+          }
+        ],
+        "type": "single-select"
+      },
+      {
+        "id": "4",
+        "question": "What do you hate the most in a book?",
+        "options": [
+          {
+            "value": "Lack of logic"
+          },
+          {
+            "value": "A slow speed"
+          },
+          {
+            "value": "Lack of humor"
+          },
+          {
+            "value": "Way too generic ending"
+          }
+        ],
+        "type": "multiple-select"
+      },
+      {
+        "id": "5",
+        "question": "What are your favorite topics?",
+        "description": "Choose up to 3 topics you like",
+        "options": [
+          {
+            "value": "Werewolf"
+          },
+          {
+            "value": "Romance"
+          },
+          {
+            "value": "Action"
+          },
+          {
+            "value": "Young Adult"
+          },
+          {
+            "value": "Royal Obsession"
+          },
+          {
+            "value": "Bad Boy"
+          },
+          {
+            "value": "Billionaire"
+          }
+        ],
+        "type": "bubble"
+      }
+    ],
+    "es": [
+      {
+        "id": "1",
+        "question": "¿Cuál es tu idioma preferido?",
+        "description": "Elige un idioma",
+        "options": [
+          {
+            "value": "Inglés"
+          },
+          {
+            "value": "Francés"
+          },
+          {
+            "value": "Alemán"
+          },
+          {
+            "value": "Español"
+          }
+        ],
+        "type": "single-select"
+      },
+      {
+        "id": "2",
+        "question": "¿Con qué género te identificas?",
+        "description": "Por favor, comparte cómo te identificas",
+        "options": [
+          {
+            "value": "Mujer"
+          },
+          {
+            "value": "Hombre"
+          },
+          {
+            "value": "Otro"
+          }
+        ],
+        "type": "single-select"
+      },
+      {
+        "id": "3",
+        "question": "¿Cuál es tu edad?",
+        "options": [
+          {
+            "value": "18-25 años"
+          },
+          {
+            "value": "30-39 años"
+          },
+          {
+            "value": "40-49 años"
+          },
+          {
+            "value": "50+"
+          }
+        ],
+        "type": "single-select"
+      },
+      {
+        "id": "4",
+        "question": "¿Qué es lo que más odias en un libro?",
+        "options": [
+          {
+            "value": "Falta de lógica"
+          },
+          {
+            "value": "Demasiado lento"
+          },
+          {
+            "value": "Falta de humor"
+          },
+          {
+            "value": "Final demasiado genérico"
+          }
+        ],
+        "type": "multiple-select"
+      },
+      {
+        "id": "5",
+        "question": "¿Cuáles son tus temas favoritos?",
+        "description": "Elige hasta 3 temas que te gusten",
+        "options": [
+          {
+            "value": "Hombre Lobo"
+          },
+          {
+            "value": "Romance"
+          },
+          {
+            "value": "Acción"
+          },
+          {
+            "value": "Joven Adulto"
+          },
+          {
+            "value": "Obsesión Real"
+          },
+          {
+            "value": "Chico Malo"
+          },
+          {
+            "value": "Billionaire"
+          }
+        ],
+        "type": "bubble"
+      }
+    ],
+    "de": [
+      {
+        "id": "1",
+        "question": "Was ist deine bevorzugte Sprache?",
+        "description": "Sprache wählen",
+        "options": [
+          {
+            "value": "Englisch"
+          },
+          {
+            "value": "Französisch"
+          },
+          {
+            "value": "Deutsch"
+          },
+          {
+            "value": "Spanisch"
+          }
+        ],
+        "type": "single-select"
+      },
+      {
+        "id": "2",
+        "question": "Mit welchem Geschlecht identifizierst du dich?",
+        "description": "Bitte teile mit, mit welchem Geschlecht du dich identifizierst",
+        "options": [
+          {
+            "value": "Weiblich"
+          },
+          {
+            "value": "Männlich"
+          },
+          {
+            "value": "Andere"
+          }
+        ],
+        "type": "single-select"
+      },
+      {
+        "id": "3",
+        "question": "Wie alt bist du?",
+        "options": [
+          {
+            "value": "18-25 Jahre"
+          },
+          {
+            "value": "30-39 Jahre"
+          },
+          {
+            "value": "40-49 Jahre"
+          },
+          {
+            "value": "50+"
+          }
+        ],
+        "type": "single-select"
+      },
+      {
+        "id": "4",
+        "question": "Was stört dich am meisten an einem Buch?",
+        "options": [
+          {
+            "value": "Fehlende Logik"
+          },
+          {
+            "value": "Zu langsam"
+          },
+          {
+            "value": "Fehlender Humor"
+          },
+          {
+            "value": "Viel zu generisches Ende"
+          }
+        ],
+        "type": "multiple-select"
+      },
+      {
+        "id": "5",
+        "question": "Was sind deine Lieblingsthemen?",
+        "description": "Wähle bis zu 3 Themen aus, die dir gefallen",
+        "options": [
+          {
+            "value": "Werwolf"
+          },
+          {
+            "value": "Romantik"
+          },
+          {
+            "value": "Action"
+          },
+          {
+            "value": "Junges Erwachsenenalter"
+          },
+          {
+            "value": "Königliche Obsession"
+          },
+          {
+            "value": "Bad Boy"
+          },
+          {
+            "value": "Milliardär"
+          }
+        ],
+        "type": "bubble"
+      }
+    ],
+    "fr": [
+      {
+        "id": "1",
+        "question": "Quelle est votre langue préférée ?",
+        "description": "Choisissez la langue",
+        "options": [
+          {
+            "value": "Anglais"
+          },
+          {
+            "value": "Français"
+          },
+          {
+            "value": "Allemand"
+          },
+          {
+            "value": "Espagnol"
+          }
+        ],
+        "type": "single-select"
+      },
+      {
+        "id": "2",
+        "question": "Avec quel genre vous identifiez-vous ?",
+        "description": "Veuillez indiquer avec quel genre vous vous identifiez",
+        "options": [
+          {
+            "value": "Femme"
+          },
+          {
+            "value": "Homme"
+          },
+          {
+            "value": "Autre"
+          }
+        ],
+        "type": "single-select"
+      },
+      {
+        "id": "3",
+        "question": "Quel est votre âge ?",
+        "options": [
+          {
+            "value": "18-25 ans"
+          },
+          {
+            "value": "30-39 ans"
+          },
+          {
+            "value": "40-49 ans"
+          },
+          {
+            "value": "50+"
+          }
+        ],
+        "type": "single-select"
+      },
+      {
+        "id": "4",
+        "question": "Qu'est-ce que vous détestez le plus dans un livre ?",
+        "options": [
+          {
+            "value": "Manque de logique"
+          },
+          {
+            "value": "Une vitesse lente"
+          },
+          {
+            "value": "Manque d'humour"
+          },
+          {
+            "value": "Une fin beaucoup trop générique"
+          }
+        ],
+        "type": "multiple-select"
+      },
+      {
+        "id": "5",
+        "question": "Quels sont vos sujets préférés ?",
+        "description": "Choisissez jusqu'à 3 sujets que vous aimez",
+        "options": [
+          {
+            "value": "Loup-garou"
+          },
+          {
+            "value": "Romance"
+          },
+          {
+            "value": "Action"
+          },
+          {
+            "value": "Jeune adulte"
+          },
+          {
+            "value": "Obsession royale"
+          },
+          {
+            "value": "Mauvais garçon"
+          },
+          {
+            "value": "Milliardaire"
+          }
+        ],
+        "type": "bubble"
+      }
+    ]
+  }
 }
