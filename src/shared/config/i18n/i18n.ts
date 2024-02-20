@@ -36,7 +36,6 @@ i18n
       lookupQuerystring: 'lng',
       lookupCookie: 'i18next',
       lookupLocalStorage: 'i18nextLng',
-      lookupSessionStorage: 'i18nextLng',
       caches: ['localStorage', 'cookie'],
       excludeCacheFor: ['cimode'],
       cookieMinutes: 10,
