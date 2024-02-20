@@ -39,13 +39,19 @@ module.exports = {
     "react/destructuring-assignment": 'off',
     "react/jsx-props-no-spreading": 'off',
     'i18next/no-literal-string': [
-      'off',
+      'error',
       {
         markupOnly: true,
         ignoreAttribute: [
+          'font',
+          'size',
+          'theme',
           'data-testid',
-          'border',
-          'role',
+          'borderRadius',
+          'strokeTheme',
+          'aria-label',
+          'alt',
+          'weight',
           'to',
           'target',
           'justify',
