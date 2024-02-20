@@ -12,6 +12,7 @@ i18n
     debug: __IS_DEV__,
     cleanCode: true,
     lowerCaseLng: true,
+    keySeparator: false,
     backend: {
       loadPath: '/locales/{{lng}}/{{ns}}.json',
       overrideMimeType: false,
