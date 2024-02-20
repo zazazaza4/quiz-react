@@ -28,7 +28,9 @@ const QuizPage: FC<QuizPageProps> = memo((props: QuizPageProps) => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(fetchQuizList());
+    if (__PROJECT__ !== 'storybook') {
+      dispatch(fetchQuizList());
+    }
   }, [dispatch]);
 
   if (!id) {
@@ -55,7 +57,11 @@ const QuizPage: FC<QuizPageProps> = memo((props: QuizPageProps) => {
   return (
     <Page className={classNames(cls.QuizPage, {}, [className])}>
       <VStack max className="container" align="center">
-        <QuizPageHeader current={Number(id)} total={total} />
+        <QuizPageHeader
+          current={Number(id)}
+          total={total}
+          isShowBackButton={id !== '1'}
+        />
         <QuizPageContent className={cls.content} quizId={id} total={total} />
       </VStack>
     </Page>
